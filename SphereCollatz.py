@@ -7,11 +7,10 @@
 # ---------------------------
 
 import sys
-
+cache = []
 # ------------
 # collatz_read
 # ------------
-
 def collatz_read (s) :
     """
     read two ints
@@ -33,15 +32,18 @@ def collatz_eval (i, j) :
     """
     assert i > 0
     assert j > 0
-    if i > j :
-        temp = i
-        i = j
-        j = i
-    i = max(i, (j//2))
+    if i < j :
+        min = i
+        max = j
+    else :
+        min = j
+        max = i
+
     max_cycle_length = 0
     length = 0
-    for x in range(i, j+1) :
-        length = cycle_length(x)
+    global cache
+    for n in range(min, max+1) :
+        length = cycle_length(n, cache)
         if length > max_cycle_length :
             max_cycle_length = length
 
@@ -50,19 +52,20 @@ def collatz_eval (i, j) :
 # ------------
 # cycle_length
 # ------------
-def cycle_length (n) :
-    cache = []
+def cycle_length (n, cache) :
     assert n > 0
-    # check prime number
     c = 1
-    while n > 1 and n > len(cache) :
+    # check if n is already has cycle length
+    if len(cache) >= n:
+        return cache[n-1]
+    while n > 1 :
         if (n % 2) == 0 :
-            n = (n // 2)
+            n = n >> 1
         else :
             n = (3 * n) + 1
         c += 1
-    if n <= len(cache) :
-        c =  c - 1 + cache[n-1]
+    #if(n > 1) :
+    #    c = c -1 + cache[n-1]
     cache.append(c)
     assert c > 0
     return c
