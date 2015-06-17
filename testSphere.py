@@ -5,9 +5,11 @@
 # Copyright (C) 2015
 # Glenn P. Downing
 # ---------------------------
+
 import sys
 cache = []
- # 1-1000, 1001-2000, 2001-3000.....100000
+ # meta cache. has elements of max cycle length in range of
+ # 1-1000, 1001-2000, 2001-3000.....99001-10000
 cache2 = [179 , 182 , 217 , 238 , 215 , 236 , 262 , 252 , 247 , 
 260 , 268 , 250 , 263 , 276 , 271 , 271 , 266 , 279 , 261 , 274 , 
 256 , 269 , 269 , 282 , 264 , 264 , 308 , 259 , 259 , 272 , 272 , 
@@ -18,10 +20,11 @@ cache2 = [179 , 182 , 217 , 238 , 215 , 236 , 262 , 252 , 247 ,
 307 , 307 , 351 , 338 , 307 , 320 , 320 , 320 , 289 , 320 , 302 , 
 302 , 333 , 333 , 315 , 315 , 333 , 315 , 284 , 315 , 328 , 297 , 
 297 , 284 , 328 ]
+
+
 # ------------
 # collatz_read
 # ------------
-
 def collatz_read (s) :
     """
     read two ints
@@ -144,3 +147,10 @@ def collatz_solve (r, w) :
         i, j = collatz_read(s)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+# ----
+# main
+# ----
+
+if __name__ == "__main__" :
+    collatz_solve(sys.stdin, sys.stdout)
