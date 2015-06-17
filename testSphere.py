@@ -77,26 +77,26 @@ def collatz_eval (i, j) :
         # if min is not 1, 1001, 2001
         if minMo != 1 :
             minMax = cStart*1000
-            for n in range(min, minMax+1) :
-                length = cycle_length(n, cache)
-                if length > max_cycle_length :
-                    max_cycle_length = length
+            max_cycle_length = find_max(min, minMax, max_cycle_length, cache)
+
         # if maxMo > 1
         if maxMo != 0 :
             maxMin = cEnd*1000+1
-            for n in range(maxMin, max+1) :
-                length = cycle_length(n, cache)
-                if length > max_cycle_length :
-                    max_cycle_length = length
+            max_cycle_length = find_max(maxMin, max, max_cycle_length, cache)
 
         return max_cycle_length
     else :
-        for n in range(min, max+1) :
-            length = cycle_length(n, cache)
-            if length > max_cycle_length :
-                max_cycle_length = length
+        return find_max(min, max, max_cycle_length, cache)
 
-        return max_cycle_length
+# -----------------------
+# find max_cycle_in_range
+# -----------------------
+def find_max(min, max, max_cycle_length, cache) :
+    for n in range(min, max+1) :
+        length = cycle_length(n, cache)
+        if length > max_cycle_length :
+            max_cycle_length = length
+    return max_cycle_length
 
 
 # ------------
