@@ -1,0 +1,83 @@
+commit 4b62346387eb91511dc364bef7aa01f40e6b88c7
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Wed Jun 17 21:02:30 2015 -0500
+
+    add acceptance, unittests
+
+commit 95c2e201fa771f34783d4ab60142f891cfe76534
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Wed Jun 17 18:44:00 2015 -0500
+
+    Write 100 or more lines of acceptance tests.
+
+commit 00495ce2e66ae9a90f8466ddcb0ad39f77b11321
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Wed Jun 17 18:41:04 2015 -0500
+
+    cover the whole range in meta cache in Caollatz.py
+
+commit 36389ba76cb05eeffce4cd589dba717eecdca23a
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Wed Jun 17 17:07:53 2015 -0500
+
+    remove the repeated code in Collatz.py
+
+commit 58874848830b8f33a58fb39b65518f2da3021281
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Wed Jun 17 16:43:48 2015 -0500
+
+    use meta cache in collatz_eval. pass Sphere with 0.5 sec. closes #19 closes #17 closes #16
+
+commit a437206b3be9849ea1484f31af9e26f0036ef6de
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Tue Jun 16 16:38:18 2015 -0500
+
+    fix bug on Collatz.py and SphereCollatz.py. use simple cache. closes #11 closes #12 closes #13 closes #14 closes #15
+
+commit c77404f65584dfe741b1b79f14843b8d8144b061
+Author: Nari Jeong <nari@Naris-MBP.attlocal.net>
+Date:   Tue Jun 16 06:43:52 2015 -0500
+
+    add caching and optimization. It wokrs with unittest but fails with sphere. find the bug
+
+commit 54bc0e1972d4a07023177a72e1b8346acd1d00f5
+Author: Nari Jeong <nari@Naris-MBP.attlocal.net>
+Date:   Sat Jun 13 13:19:07 2015 -0500
+
+    add .gitignore
+
+commit 0387861272c1e6678133fb100e5871d03914948c
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Thu Jun 11 14:36:08 2015 -0500
+
+    fix collatz_eval
+
+commit 736f17453f591eac4cb21752b30ecf30fdc40f68
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Tue Jun 9 19:32:20 2015 -0500
+
+    fix unit tests with correct results. The test failes.
+
+commit 013646f35f962af11d6d45ac474e8783b4e31342
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Tue Jun 9 19:27:00 2015 -0500
+
+    run RunCollatz.py and TestCollatz.py. The code works because collatz_eval() always returns 1 and TestCollatz.py always test with value 1.
+
+commit b1db4b6202365960115a897f89bd52310f47b6ed
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Tue Jun 9 16:24:55 2015 -0500
+
+    add sudo: required in .travis.yml
+
+commit f10af9a8221158ea3438d40ac526af37e9fc2fec
+Author: Nari Jeong <nari@wireless-10-147-187-197.public.utexas.edu>
+Date:   Tue Jun 9 16:19:48 2015 -0500
+
+    add all the files i need
+
+commit 7ae1fb5d5ed2a1856a4a4f188fb44a9f195eac09
+Author: nari <narijeong@icloud.com>
+Date:   Tue Jun 9 16:10:49 2015 -0500
+
+    Initial commit
