@@ -134,10 +134,9 @@ def collatz_eval (i, j) :
     """
     assert i > 0
     assert j > 0
-    if i < j :
-        min = i
-        max = j
-    else :
+
+    min, max = i, j
+    if i > j :
         min = j
         max = i
 
@@ -170,10 +169,13 @@ def collatz_eval (i, j) :
         if maxMo != 0 :
             maxMin = cEnd*1000+1
             max_cycle_length = find_max(maxMin, max, max_cycle_length)
+        assert max_cycle_length > 0
         return max_cycle_length
 
     else :
-        return find_max(min, max, max_cycle_length)
+        max_cycle_length = find_max(min, max, max_cycle_length)
+        assert max_cycle_length > 0 
+        return max_cycle_length
 
 # -----------------------
 # find max_cycle_in_range
@@ -200,18 +202,12 @@ def cycle_length (n) :
     """
     assert n > 0
     c = 1
-    # check if n is already has cycle length
-    #if len(cache) >= n:
-    #    return cache[n-1]
     while n > 1 :
         if (n % 2) == 0 :
             n = n >> 1
         else :
             n = (3 * n) + 1
         c += 1
-    #if(n > 1) :
-    #    c = c -1 + cache[n-1]
-    #cache.append(c)
     assert c > 0
     return c
 
@@ -242,3 +238,4 @@ def collatz_solve (r, w) :
         i, j = collatz_read(s)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
